@@ -1,0 +1,15 @@
+{
+  "namespace": "fr.davit.avro",
+  "type": "record",
+  "name": "TestMessage",
+  "fields": [
+    {
+      "name": "string_field",
+      "type": "string"
+    },
+    {
+      "name": "number_field",
+      "type": "int"
+    }
+  ]
+}
