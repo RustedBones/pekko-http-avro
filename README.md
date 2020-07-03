@@ -1,6 +1,6 @@
 # akka-http-avro
 
-[![Build Status](https://travis-ci.org/RustedBones/akka-http-avro.svg?branch=master&style=flat)](https://travis-ci.org/RustedBones/akka-http-avro)
+[![Scala CI](https://github.com/RustedBones/akka-http-avro/workflows/Scala%20CI/badge.svg)](https://github.com/RustedBones/akka-http-avro/actions?query=workflow%3A"Scala+CI")
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/fr.davit/akka-http-avro_2.13/badge.svg)](https://maven-badges.herokuapp.com/maven-central/fr.davit/akka-http-avro_2.13)
 [![Software License](https://img.shields.io/badge/license-Apache%202-brightgreen.svg?style=flat)](LICENSE)
 
