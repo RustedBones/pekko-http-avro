@@ -12,6 +12,7 @@ akka-http avro  marshalling/unmarshalling for generated java avro specific recor
 
 | Version | Release date | Akka Http version | Avro version | Scala versions                 |
 | ------- | ------------ | ----------------- | ------------ | ------------------------------ |
+| 0.1.1   | 2020-07-03   | 10.1.12           | 1.10.0       | 2.13.3, 2.12.11, 2.11.12       | 
 | 0.1.0   | 2020-03-01   | 10.1.11           | 1.9.2        | 2.13.1, 2.12.10, 2.11.12       | 
 
 The complete list can be found in the [CHANGELOG](CHANGELOG.md) file.
