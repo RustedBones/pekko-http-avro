@@ -1,6 +1,6 @@
 # akka-http-avro
 
-[![Scala CI](https://github.com/RustedBones/akka-http-avro/workflows/Scala%20CI/badge.svg)](https://github.com/RustedBones/akka-http-avro/actions?query=workflow%3A"Scala+CI")
+[![Scala CI](https://github.com/RustedBones/akka-http-avro/workflows/Scala%20CI/badge.svg)](https://github.com/RustedBones/akka-http-avro/actions?query=branch%3Amaster+workflow%3A"Continuous+Integration")
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/fr.davit/akka-http-avro_2.13/badge.svg)](https://maven-badges.herokuapp.com/maven-central/fr.davit/akka-http-avro_2.13)
 [![Software License](https://img.shields.io/badge/license-Apache%202-brightgreen.svg?style=flat)](LICENSE)
 
