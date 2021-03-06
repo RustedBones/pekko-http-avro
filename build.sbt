@@ -1,4 +1,3 @@
-
 // General info
 val username = "RustedBones"
 val repo     = "akka-http-avro"
@@ -11,10 +10,10 @@ lazy val filterScalacOptions = { options: Seq[String] =>
 }
 
 // for sbt-github-actions
-ThisBuild / crossScalaVersions := Seq("2.13.3", "2.12.12")
+ThisBuild / crossScalaVersions := Seq("2.13.5", "2.12.13")
 ThisBuild / githubWorkflowBuild := Seq(
   WorkflowStep.Sbt(name = Some("Check project"), commands = List("scalafmtCheckAll", "headerCheckAll")),
-  WorkflowStep.Sbt( name = Some("Build project"), commands = List("test"))
+  WorkflowStep.Sbt(name = Some("Build project"), commands = List("test"))
 )
 ThisBuild / githubWorkflowTargetBranches := Seq("master")
 ThisBuild / githubWorkflowPublishTargetBranches := Seq.empty
@@ -35,7 +34,8 @@ lazy val commonSettings = Seq(
       id = s"$username",
       name = "Michel Davit",
       email = "michel@davit.fr",
-      url = url(s"https://github.com/$username"))
+      url = url(s"https://github.com/$username")
+    )
   ),
   publishMavenStyle := true,
   Test / publishArtifact := false,
@@ -43,7 +43,7 @@ lazy val commonSettings = Seq(
   credentials ++= (for {
     username <- sys.env.get("SONATYPE_USERNAME")
     password <- sys.env.get("SONATYPE_PASSWORD")
-  } yield Credentials("Sonatype Nexus Repository Manager", "oss.sonatype.org", username, password)).toSeq,
+  } yield Credentials("Sonatype Nexus Repository Manager", "oss.sonatype.org", username, password)).toSeq
 )
 
 lazy val `akka-http-avro` = (project in file("."))
