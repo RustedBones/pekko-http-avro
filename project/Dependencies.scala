@@ -11,13 +11,13 @@ object Dependencies {
     val scalaTest = "3.2.5"
   }
 
-  val akkaHttp = "com.typesafe.akka"   %% "akka-http"       % Versions.akkaHttp
+  val akkaHttp = "com.typesafe.akka"  %% "akka-http"        % Versions.akkaHttp
   val avro     = "org.apache.avro"     % "avro"             % Versions.avro
   val avro4s   = "com.sksamuel.avro4s" % "avro4s-core_2.12" % Versions.avro4s
 
   object Provided {
-    val akkaStream = "com.typesafe.akka" %% "akka-stream"    % Versions.akka    % "provided"
-    val logback    = "ch.qos.logback"    % "logback-classic" % Versions.logback % "provided"
+    val akkaStream = "com.typesafe.akka" %% "akka-stream"     % Versions.akka    % "provided"
+    val logback    = "ch.qos.logback"     % "logback-classic" % Versions.logback % "provided"
   }
 
   object Test {
