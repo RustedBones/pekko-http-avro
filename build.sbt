@@ -2,13 +2,6 @@
 val username = "RustedBones"
 val repo     = "akka-http-avro"
 
-lazy val filterScalacOptions = { options: Seq[String] =>
-  options.filterNot { o =>
-    // get rid of value discard
-    o == "-Ywarn-value-discard" || o == "-Wvalue-discard"
-  }
-}
-
 // for sbt-github-actions
 ThisBuild / crossScalaVersions := Seq("2.13.8", "2.12.15")
 ThisBuild / githubWorkflowBuild := Seq(
@@ -21,10 +14,8 @@ ThisBuild / githubWorkflowPublishTargetBranches := Seq.empty
 lazy val commonSettings = Seq(
   organization := "fr.davit",
   organizationName := "Michel Davit",
-  version := "0.1.3-SNAPSHOT",
   crossScalaVersions := (ThisBuild / crossScalaVersions).value,
   scalaVersion := crossScalaVersions.value.head,
-  scalacOptions ~= filterScalacOptions,
   homepage := Some(url(s"https://github.com/$username/$repo")),
   licenses += ("Apache-2.0", new URL("https://www.apache.org/licenses/LICENSE-2.0.txt")),
   startYear := Some(2020),
@@ -40,6 +31,8 @@ lazy val commonSettings = Seq(
   publishMavenStyle := true,
   Test / publishArtifact := false,
   publishTo := Some(if (isSnapshot.value) Opts.resolver.sonatypeSnapshots else Opts.resolver.sonatypeStaging),
+  releaseCrossBuild := true,
+  releasePublishArtifactsAction := PgpKeys.publishSigned.value,
   credentials ++= (for {
     username <- sys.env.get("SONATYPE_USERNAME")
     password <- sys.env.get("SONATYPE_PASSWORD")
