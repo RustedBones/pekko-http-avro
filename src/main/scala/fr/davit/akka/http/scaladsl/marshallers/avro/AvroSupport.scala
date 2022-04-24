@@ -34,9 +34,9 @@ trait AvroAbstractSupport {
 
   protected def coderFactory: AvroCoderFactory
 
-  //--------------------------------------------------------------------------------------------------------------------
+  // --------------------------------------------------------------------------------------------------------------------
   // Unmarshallers
-  //--------------------------------------------------------------------------------------------------------------------
+  // --------------------------------------------------------------------------------------------------------------------
   implicit def avroUnmarshaller[T <: SpecificRecordBase: ClassTag]: FromEntityUnmarshaller[T] = {
     val coder = coderFactory.newCoder[T]
     Unmarshaller.byteStringUnmarshaller
@@ -44,9 +44,9 @@ trait AvroAbstractSupport {
       .map(coder.decode)
   }
 
-  //--------------------------------------------------------------------------------------------------------------------
+  // --------------------------------------------------------------------------------------------------------------------
   // Marshallers
-  //--------------------------------------------------------------------------------------------------------------------
+  // --------------------------------------------------------------------------------------------------------------------
   implicit def avroMarshaller[T <: SpecificRecordBase: ClassTag]: ToEntityMarshaller[T] = {
     val coder = coderFactory.newCoder[T]
     Marshaller.oneOf(contentTypes.map(ct => Marshaller.ByteStringMarshaller.wrap(ct.mediaType)(coder.encode)): _*)
