@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+## v0.1.3 (2022-04-24)
+
+- Update to avro 1.11.0
 - Update dependencies
 
 ## v0.1.2 (2020-09-18)
