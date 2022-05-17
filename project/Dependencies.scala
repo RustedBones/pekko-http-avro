@@ -8,7 +8,7 @@ object Dependencies {
     val avro      = "1.11.0"
     val avro4s    = "3.0.8"
     val logback   = "1.2.11"
-    val scalaTest = "3.2.11"
+    val scalaTest = "3.2.12"
   }
 
   val akkaHttp = "com.typesafe.akka"  %% "akka-http"        % Versions.akkaHttp
