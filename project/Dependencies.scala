@@ -3,21 +3,19 @@ import sbt._
 object Dependencies {
 
   object Versions {
+    val avro      = "1.11.1"
+    val logback   = "1.2.11"
     val pekko     = "1.0.0"
     val pekkoHttp = "1.0.0"
-    val avro      = "1.11.0"
-    val avro4s    = "3.0.8"
-    val logback   = "1.2.11"
     val scalaTest = "3.2.12"
   }
 
-  val pekkoHttp = "org.apache.pekko"   %% "pekko-http"       % Versions.pekkoHttp
-  val avro      = "org.apache.avro"     % "avro"             % Versions.avro
-  val avro4s    = "com.sksamuel.avro4s" % "avro4s-core_2.12" % Versions.avro4s
+  val pekkoHttp = "org.apache.pekko" %% "pekko-http" % Versions.pekkoHttp
 
   object Provided {
-    val pekkoStream = "org.apache.pekko" %% "pekko-stream"    % Versions.pekko   % "provided"
+    val avro        = "org.apache.avro"   % "avro"            % Versions.avro    % "provided"
     val logback     = "ch.qos.logback"    % "logback-classic" % Versions.logback % "provided"
+    val pekkoStream = "org.apache.pekko" %% "pekko-stream"    % Versions.pekko   % "provided"
   }
 
   object Test {
