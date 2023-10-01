@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package fr.davit.akka.http.scaladsl.marshallers.avro
+package fr.davit.pekko.http.scaladsl.marshallers.avro
 
-import akka.http.scaladsl.marshalling.{Marshaller, ToEntityMarshaller}
-import akka.http.scaladsl.model.MediaType.NotCompressible
-import akka.http.scaladsl.model._
-import akka.http.scaladsl.unmarshalling.{FromEntityUnmarshaller, Unmarshaller}
 import org.apache.avro.specific.SpecificRecordBase
+import org.apache.pekko.http.scaladsl.marshalling.{Marshaller, ToEntityMarshaller}
+import org.apache.pekko.http.scaladsl.model.MediaType.NotCompressible
+import org.apache.pekko.http.scaladsl.model._
+import org.apache.pekko.http.scaladsl.unmarshalling.{FromEntityUnmarshaller, Unmarshaller}
 
 import scala.reflect.ClassTag
 

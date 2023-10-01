@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package fr.davit.akka.http.scaladsl.marshallers.avro
+package fr.davit.pekko.http.scaladsl.marshallers.avro
 
-import akka.util.ByteString
 import org.apache.avro.Schema
 import org.apache.avro.io.{DecoderFactory, EncoderFactory}
 import org.apache.avro.message.{BinaryMessageDecoder, BinaryMessageEncoder}
 import org.apache.avro.reflect.ReflectData
 import org.apache.avro.specific.{SpecificData, SpecificDatumReader, SpecificDatumWriter}
+import org.apache.pekko.util.ByteString
 
 import scala.reflect.ClassTag
 

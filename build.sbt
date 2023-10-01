@@ -1,6 +1,6 @@
 // General info
 val username = "RustedBones"
-val repo     = "akka-http-avro"
+val repo     = "pekko-http-avro"
 
 // for sbt-github-actions
 ThisBuild / crossScalaVersions := Seq("2.13.8", "2.12.15")
@@ -39,16 +39,16 @@ lazy val commonSettings = Seq(
   } yield Credentials("Sonatype Nexus Repository Manager", "oss.sonatype.org", username, password)).toSeq
 )
 
-lazy val `akka-http-avro` = (project in file("."))
+lazy val `pekko-http-avro` = (project in file("."))
   .settings(commonSettings: _*)
   .settings(
     libraryDependencies ++= Seq(
-      Dependencies.akkaHttp,
+      Dependencies.pekkoHttp,
       Dependencies.avro,
-      Dependencies.Provided.akkaStream,
+      Dependencies.Provided.pekkoStream,
       Dependencies.Provided.logback,
-      Dependencies.Test.akkaTestkit,
-      Dependencies.Test.akkaHttpTestkit,
+      Dependencies.Test.pekkoTestkit,
+      Dependencies.Test.pekkoHttpTestkit,
       Dependencies.Test.scalaTest
     )
   )

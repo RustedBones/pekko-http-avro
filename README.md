@@ -1,31 +1,28 @@
-# akka-http-avro
+# pekko-http-avro
 
-[![Continuous Integration](https://github.com/RustedBones/akka-http-avro/actions/workflows/ci.yml/badge.svg)](https://github.com/RustedBones/akka-http-avro/actions/workflows/ci.yml)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/fr.davit/akka-http-avro_2.13/badge.svg)](https://maven-badges.herokuapp.com/maven-central/fr.davit/akka-http-avro_2.13)
+[![Continuous Integration](https://github.com/RustedBones/pekko-http-avro/actions/workflows/ci.yml/badge.svg)](https://github.com/RustedBones/pekko-http-avro/actions/workflows/ci.yml)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/fr.davit/pekko-http-avro_2.13/badge.svg)](https://maven-badges.herokuapp.com/maven-central/fr.davit/pekko-http-avro_2.13)
 [![Software License](https://img.shields.io/badge/license-Apache%202-brightgreen.svg?style=flat)](LICENSE)
 [![Scala Steward badge](https://img.shields.io/badge/Scala_Steward-helping-blue.svg?style=flat&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAQCAMAAAARSr4IAAAAVFBMVEUAAACHjojlOy5NWlrKzcYRKjGFjIbp293YycuLa3pYY2LSqql4f3pCUFTgSjNodYRmcXUsPD/NTTbjRS+2jomhgnzNc223cGvZS0HaSD0XLjbaSjElhIr+AAAAAXRSTlMAQObYZgAAAHlJREFUCNdNyosOwyAIhWHAQS1Vt7a77/3fcxxdmv0xwmckutAR1nkm4ggbyEcg/wWmlGLDAA3oL50xi6fk5ffZ3E2E3QfZDCcCN2YtbEWZt+Drc6u6rlqv7Uk0LdKqqr5rk2UCRXOk0vmQKGfc94nOJyQjouF9H/wCc9gECEYfONoAAAAASUVORK5CYII=)](https://scala-steward.org)
 
 
-akka-http avro  marshalling/unmarshalling for generated java avro specific records
+pekko-http avro  marshalling/unmarshalling for generated java avro specific records
 
 
 ## Versions
 
-| Version | Release date | Akka Http version | Avro version | Scala versions                 |
-|---------|--------------|-------------------|--------------|--------------------------------|
-| `0.1.3` | 2022-04-24   | `10.2.9`          | `1.11.0`     | `2.13.8`, `2.12.15`            |
-| `0.1.2` | 2020-09-18   | `10.2.0`          | `1.10.0`     | `2.13.3`, `2.12.12`            | 
-| `0.1.1` | 2020-07-03   | `10.1.12`         | `1.10.0`     | `2.13.3`, `2.12.11`, `2.11.12` | 
-| `0.1.0` | 2020-03-01   | `10.1.11`         | `1.9.2`      | `2.13.1`, `2.12.10`, `2.11.12` | 
+| Version | Release date | Pekko Http version | Avro version | Scala versions |
+|---------|--------------|--------------------|--------------|----------------|
+| `x.x.x` | xxxx-xx-xx   | `x.x.x`            | `x.x.x`      | `x.x.x`        |
 
 The complete list can be found in the [CHANGELOG](CHANGELOG.md) file.
 
-## Getting akka-http-avro
+## Getting pekko-http-avro
 
 Libraries are published to Maven Central. Add to your `build.sbt`:
 
 ```scala
-libraryDependencies += "fr.davit" %% "akka-http-avro" % <version>
+libraryDependencies += "fr.davit" %% "pekko-http-avro" % <version>
 ```
 
 ## Quick start
@@ -80,8 +77,8 @@ The implicit marshallers and unmarshallers for your generated avro classes are d
 You simply need to have them in scope.
 
 ```scala
-import akka.http.scaladsl.server.Directives._
-import fr.davit.akka.http.scaladsl.marshallers.avro.AvroSupport._
+import org.apache.pekko.http.scaladsl.server.Directives._
+import fr.davit.pekko.http.scaladsl.marshallers.avro.AvroSupport._
 
 
 object MyAvroService {
