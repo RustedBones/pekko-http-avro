@@ -45,8 +45,8 @@ ThisBuild / mimaBinaryIssueFilters ++= Seq()
 lazy val `pekko-http-avro` = (project in file("."))
   .settings(
     libraryDependencies ++= Seq(
-      Dependencies.avro,
       Dependencies.pekkoHttp,
+      Dependencies.Provided.avro,
       Dependencies.Provided.logback,
       Dependencies.Provided.pekkoStream,
       Dependencies.Test.pekkoTestkit,
