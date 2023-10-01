@@ -3,11 +3,11 @@ import sbt._
 object Dependencies {
 
   object Versions {
-    val avro      = "1.11.1"
-    val logback   = "1.2.11"
-    val pekko     = "1.0.0"
+    val avro      = "1.11.3"
+    val logback   = "1.4.11"
+    val pekko     = "1.0.1"
     val pekkoHttp = "1.0.0"
-    val scalaTest = "3.2.12"
+    val scalaTest = "3.2.17"
   }
 
   val pekkoHttp = "org.apache.pekko" %% "pekko-http" % Versions.pekkoHttp

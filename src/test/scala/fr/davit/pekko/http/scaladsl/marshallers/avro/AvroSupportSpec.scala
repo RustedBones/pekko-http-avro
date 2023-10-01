@@ -27,8 +27,6 @@ import org.scalatest.concurrent.ScalaFutures
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-import scala.annotation.nowarn
-
 class AvroSupportSpec extends AnyFlatSpec with Matchers with ScalaFutures with ScalatestRouteTest {
 
   val avro = TestMessage
@@ -42,7 +40,7 @@ class AvroSupportSpec extends AnyFlatSpec with Matchers with ScalaFutures with S
     AvroProtocol.`avro/binary`      -> avro.toByteBuffer.array()
   )
 
-  class AvroTestSuite(avroSupport: AvroAbstractSupport) {
+  def avroTestSuite(avroSupport: AvroAbstractSupport): Unit = {
 
     import avroSupport.{avroMarshaller, avroUnmarshaller}
 
@@ -75,7 +73,7 @@ class AvroSupportSpec extends AnyFlatSpec with Matchers with ScalaFutures with S
     }
   }
 
-  "AvroBinarySupport" should behave like new AvroTestSuite(AvroBinarySupport): @nowarn
-  "AvroJsonSupport" should behave like new AvroTestSuite(AvroJsonSupport): @nowarn
-  "AvroSupport" should behave like new AvroTestSuite(AvroSupport): @nowarn
+  "AvroBinarySupport" should behave like avroTestSuite(AvroBinarySupport)
+  "AvroJsonSupport" should behave like avroTestSuite(AvroJsonSupport)
+  "AvroSupport" should behave like avroTestSuite(AvroSupport)
 }
