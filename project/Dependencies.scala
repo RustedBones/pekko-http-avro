@@ -10,10 +10,10 @@ object Dependencies {
     val scalaTest = "3.2.17"
   }
 
+  val avro      = "org.apache.avro"   % "avro"       % Versions.avro
   val pekkoHttp = "org.apache.pekko" %% "pekko-http" % Versions.pekkoHttp
 
   object Provided {
-    val avro        = "org.apache.avro"   % "avro"            % Versions.avro    % "provided"
     val logback     = "ch.qos.logback"    % "logback-classic" % Versions.logback % "provided"
     val pekkoStream = "org.apache.pekko" %% "pekko-stream"    % Versions.pekko   % "provided"
   }
