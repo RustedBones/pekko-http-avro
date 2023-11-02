@@ -66,7 +66,8 @@ and
 
 Marshalling/Unmarshalling of the generated classes depends on the `Accept`/`Content-Type` header sent by the client:
 - `Content-Type: application/json`: json
-- `Content-Type: avro/binary`: binary
+- `Content-Type: avro/raw`: binary without schema
+- `Content-Type: avro/binary`: binary with schema (see [schema resolution](https://avro.apache.org/docs/1.11.1/specification/#schema-resolution))
 
 -No `Accept` header or matching several (eg `Accept: application/*`) will take the 1st matching type from the above list.
 

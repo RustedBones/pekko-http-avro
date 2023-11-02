@@ -10,6 +10,13 @@
     {
       "name": "number_field",
       "type": "int"
+    },
+    {
+      "name": "date_field",
+      "type": {
+        "type": "int",
+        "logicalType": "date"
+      }
     }
   ]
 }
