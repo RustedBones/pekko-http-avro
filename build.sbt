@@ -40,6 +40,7 @@ ThisBuild / tlJdkRelease            := Some(8)
 ThisBuild / tlSonatypeUseLegacyHost := true
 
 // mima
+ThisBuild / tlBaseVersion := "1.0"
 ThisBuild / mimaBinaryIssueFilters ++= Seq()
 
 lazy val `pekko-http-avro` = (project in file("."))
