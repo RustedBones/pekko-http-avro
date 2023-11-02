@@ -40,7 +40,8 @@ class AvroSupportSpec extends AnyFlatSpec with Matchers with ScalaFutures with S
     .setDateField(LocalDate.of(1970, 1, 1))
     .build()
 
-  val json: String = """{"string_field":"test","number_field":42,"date_field":0}"""
+  val json: Array[Byte] =
+    """{"string_field":"test","number_field":42,"date_field":0}""".getBytes(StandardCharsets.UTF_8)
 
   val raw: Array[Byte] = new RawMessageEncoder[TestMessage](avro.getSpecificData, avro.getSchema)
     .encode(avro)
@@ -50,8 +51,8 @@ class AvroSupportSpec extends AnyFlatSpec with Matchers with ScalaFutures with S
     .encode(avro)
     .array()
 
-  val dataForContentType = Map[ContentType, Array[Byte]](
-    ContentTypes.`application/json` -> json.getBytes(StandardCharsets.UTF_8),
+  val dataForContentType: Map[ContentType, Array[Byte]] = Map(
+    ContentTypes.`application/json` -> json,
     AvroProtocol.`avro/raw`         -> raw,
     AvroProtocol.`avro/binary`      -> binary
   )
