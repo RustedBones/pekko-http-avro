@@ -48,8 +48,8 @@ lazy val `pekko-http-avro` = (project in file("."))
     libraryDependencies ++= Seq(
       Dependencies.avro,
       Dependencies.pekkoHttp,
-      Dependencies.Provided.logback,
       Dependencies.Provided.pekkoStream,
+      Dependencies.Test.logback,
       Dependencies.Test.pekkoTestkit,
       Dependencies.Test.pekkoHttpTestkit,
       Dependencies.Test.scalaTest
