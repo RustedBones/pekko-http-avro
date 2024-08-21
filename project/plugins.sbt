@@ -1,4 +1,4 @@
-addSbtPlugin("com.github.sbt" % "sbt-avro"                 % "3.4.4")
+addSbtPlugin("com.github.sbt" % "sbt-avro"                 % "3.5.0")
 addSbtPlugin("org.typelevel"  % "sbt-typelevel"            % "0.6.7")
 addSbtPlugin("org.typelevel"  % "sbt-typelevel-ci-release" % "0.6.7")
 
