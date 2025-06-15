@@ -6,7 +6,7 @@ object Dependencies {
     val avro      = "1.12.0"
     val logback   = "1.5.4"
     val pekko     = "1.0.3"
-    val pekkoHttp = "1.0.1"
+    val pekkoHttp = "1.2.0"
     val scalaTest = "3.2.19"
   }
 
