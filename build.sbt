@@ -48,14 +48,23 @@ lazy val `pekko-http-avro` = (project in file("."))
   .enablePlugins(SbtAvro)
   .settings(
     avroVersion := Dependencies.Versions.avro,
-    javacOptions += "-Xlint:-serial", // warning in avro generated class
+    // set avro as provided dependency
+    avroAdditionalDependencies ~= { modules =>
+      modules.map { m =>
+        m.configurations match {
+          case None => m.withConfigurations(Some(Provided.name))
+          case _    => m
+        }
+      }
+    },
     libraryDependencies ++= Seq(
-      Dependencies.avro,
       Dependencies.pekkoHttp,
       Dependencies.Provided.pekkoStream,
       Dependencies.Test.logback,
       Dependencies.Test.pekkoTestkit,
       Dependencies.Test.pekkoHttpTestkit,
       Dependencies.Test.scalaTest
-    )
+    ),
+    // warning in avro generated class
+    Test / javacOptions += "-Xlint:-serial"
   )
