@@ -11,9 +11,10 @@ pekko-http avro  marshalling/unmarshalling for generated java avro specific reco
 
 ## Versions
 
-| Version | Release date | Pekko Http version | Avro version | Scala versions     |
-|---------|--------------|--------------------|--------------|--------------------|
-| `1.0.0` | 2023-11-02   | `1.0.0`            | `1.11.3`     | `3.3.1`, `2.13.12` |
+| Version | Release date | Pekko Http version | Avro version   | Scala versions     |
+|---------|--------------|--------------------|----------------|--------------------|
+| `1.0.0` | 2023-11-02   | `1.0.0`            | `1.11.3`       | `3.3.1`, `2.13.12` |
+| `1.1.0` | 2025-06-15   | `1.2.0`            | `provided`     | `3.3.6`, `2.13.16` |
 
 
 ## Getting pekko-http-avro
