@@ -3,15 +3,14 @@ val username  = "RustedBones"
 val repo      = "pekko-http-avro"
 val githubUrl = s"https://github.com/$username/$repo"
 
-ThisBuild / tlBaseVersion          := "1.0"
-ThisBuild / organization           := "fr.davit"
-ThisBuild / organizationName       := "Michel Davit"
-ThisBuild / startYear              := Some(2019)
-ThisBuild / licenses               := Seq(License.Apache2)
-ThisBuild / homepage               := Some(url(githubUrl))
-ThisBuild / scmInfo                := Some(ScmInfo(url(githubUrl), s"git@github.com:$username/$repo.git"))
-ThisBuild / sonatypeCredentialHost := xerial.sbt.Sonatype.sonatypeLegacy
-ThisBuild / developers             := List(
+ThisBuild / tlBaseVersion    := "1.0"
+ThisBuild / organization     := "fr.davit"
+ThisBuild / organizationName := "Michel Davit"
+ThisBuild / startYear        := Some(2019)
+ThisBuild / licenses         := Seq(License.Apache2)
+ThisBuild / homepage         := Some(url(githubUrl))
+ThisBuild / scmInfo          := Some(ScmInfo(url(githubUrl), s"git@github.com:$username/$repo.git"))
+ThisBuild / developers       := List(
   Developer(
     id = s"$username",
     name = "Michel Davit",
@@ -39,13 +38,17 @@ ThisBuild / githubWorkflowJavaVersions   := Seq(java21, java17, java11)
 // build
 ThisBuild / tlFatalWarnings := true
 ThisBuild / tlJdkRelease    := Some(8)
+ThisBuild / javacOptions += "-Xlint:-options"
 
 // mima
 ThisBuild / tlBaseVersion := "1.0"
 ThisBuild / mimaBinaryIssueFilters ++= Seq()
 
 lazy val `pekko-http-avro` = (project in file("."))
+  .enablePlugins(SbtAvro)
   .settings(
+    avroVersion := Dependencies.Versions.avro,
+    javacOptions += "-Xlint:-serial", // warning in avro generated class
     libraryDependencies ++= Seq(
       Dependencies.avro,
       Dependencies.pekkoHttp,
