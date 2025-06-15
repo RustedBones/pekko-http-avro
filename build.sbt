@@ -25,26 +25,30 @@ val scala213     = "2.13.16"
 val defaultScala = scala3
 
 // github actions
+val java21      = JavaSpec.temurin("21")
 val java17      = JavaSpec.temurin("17")
 val java11      = JavaSpec.temurin("11")
-val defaultJava = java17
+val defaultJava = java21
 
 ThisBuild / scalaVersion                 := defaultScala
 ThisBuild / crossScalaVersions           := Seq(scala3, scala213)
 ThisBuild / githubWorkflowTargetBranches := Seq("main")
-ThisBuild / githubWorkflowJavaVersions   := Seq(java17, java11)
+ThisBuild / githubWorkflowJavaVersions   := Seq(java21, java17, java11)
 
 // build
-ThisBuild / tlFatalWarnings         := true
-ThisBuild / tlJdkRelease            := Some(8)
-ThisBuild / tlSonatypeUseLegacyHost := true
+ThisBuild / tlFatalWarnings := true
+ThisBuild / tlJdkRelease    := Some(8)
+ThisBuild / javacOptions += "-Xlint:-options"
 
 // mima
 ThisBuild / tlBaseVersion := "1.0"
 ThisBuild / mimaBinaryIssueFilters ++= Seq()
 
 lazy val `pekko-http-avro` = (project in file("."))
+  .enablePlugins(SbtAvro)
   .settings(
+    avroVersion := Dependencies.Versions.avro,
+    javacOptions += "-Xlint:-serial", // warning in avro generated class
     libraryDependencies ++= Seq(
       Dependencies.avro,
       Dependencies.pekkoHttp,
