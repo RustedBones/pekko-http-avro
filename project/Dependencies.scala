@@ -7,7 +7,7 @@ object Dependencies {
     val logback   = "1.5.18"
     val pekko     = "1.1.4"
     val pekkoHttp = "1.2.0"
-    val scalaTest = "3.2.19"
+    val scalaTest = "3.2.20"
   }
 
   val pekkoHttp = "org.apache.pekko" %% "pekko-http" % Versions.pekkoHttp
