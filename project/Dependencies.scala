@@ -3,7 +3,7 @@ import sbt._
 object Dependencies {
 
   object Versions {
-    val avro      = "1.12.0"
+    val avro      = "1.12.2"
     val logback   = "1.5.18"
     val pekko     = "1.1.4"
     val pekkoHttp = "1.2.0"
